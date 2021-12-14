@@ -12,7 +12,7 @@ if memo_type == 1
   CSV.open("#{csv_name}.csv", "w") do |text|
     csv_text = $stdin.read
     text << ["#{csv_text}"]
-end
+  end
 elsif memo_type == 2
   puts "編集したいファイル名を入力して下さい"
   csv_edit = gets.chomp
@@ -21,5 +21,7 @@ elsif memo_type == 2
   CSV.open("#{csv_edit}.csv", "a") do |text|
     csv_text = $stdin.read
     text << ["#{csv_text}"]
-end
+  end
+else
+  puts "1 or 2を入力して下さい"
 end
